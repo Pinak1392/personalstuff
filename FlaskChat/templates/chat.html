@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Chat</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    </head>
+    <body>
+        <ul id="messages">
+            {% for i in l %}
+                <li> {{i}} </li>
+            {% endfor %}
+        </ul>
+        <input type="text" id="MSG">
+        <button id="sendMSG"> SEND </button>
+
+        <script type="text/javascript">
+            var user = "{{u}}";
+            var socket = io.connect('http://127.0.0.1:5000');
+
+            function sendMessage(user){
+                if($('#MSG').val() !== ''){
+                    var reg = new RegExp('<script.*>.+<\/script>', 'g');
+                    var msgVal = $('#MSG').val();
+
+                    if(!msgVal.match(reg)){
+                        socket.send(user + ': ' + msgVal);
+                    }
+                    $('#MSG').val('');
+                }
+            };
+
+            socket.on('connect', function(){
+                socket.send(user + ' ' + 'has joined');
+            });
+
+            socket.on('message', function(msg){
+                $('#messages').append('<li>' + msg + '</li>');
+                console.log($('#messages li').length);
+                if ($('#messages li').length > 10){
+                    $('#messages>li:first').remove();
+                }
+            });
+
+            $(window).bind('beforeunload', function(){
+                socket.send(user + ' ' + 'has left');
+                socket.disconnect()
+            });
+
+            $('#sendMSG').on('click', function(){
+                sendMessage(user);
+            });
+
+            $('#MSG').keypress(function(event){    
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    sendMessage(user);
+                }
+            });
+
+        </script>
+    </body>
+</html>

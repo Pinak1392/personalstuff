@@ -1,0 +1,53 @@
+<h1>Your Library</h1>
+
+<form id="gameSubmit" onsubmit="formSubmit(event)">
+    <div style="display:inline-block">
+        <label for="Game">Game:</label><br>
+        <input type="text" name="Game" value="" required>
+    </div>
+
+    <div style="display:inline-block">
+        <label for="Developer">Developer:</label><br>
+        <input type="text" name="Developer" value="" required>
+    </div>
+
+    <div style="display:inline-block">
+        <label for="Score">Score:</label><br>
+        <input type='number' max="10" min="0" name="Score" value="" required>
+    </div>
+    
+    <br><br>
+    <input type="submit" value="Add">
+</form>
+<br>
+
+<div id='Games'>
+    <h3>Your Games</h3>
+    <input type="text" placeholder="search" style="margin-left: 1%" size="50" oninput="searching(event)">
+    <br>
+    <div id="library" style="width:50%; float: left;">
+
+    </div>
+    <aside id="filtersChoice" style="float: right; padding-right: 5%; position: relative;">
+        <h3>Filters</h3>
+        <input type="radio" onclick="check(event)" id='a'> <p style="display:inline">A-Z</p> <br>
+        <input type="radio" onclick="check(event)" id='z'> <p style="display:inline">Z-A</p> <br>
+        <input type="radio" onclick="check(event)" id='da'> <p style="display:inline">Dev A-Z</p> <br>
+        <input type="radio" onclick="check(event)" id='dz'> <p style="display:inline">Dev Z-A</p> <br>
+        <input type="radio" onclick="check(event)" id='0'> <p style="display:inline">0-9</p> <br>
+        <input type="radio" onclick="check(event)" id='9'> <p style="display:inline">9-0</p> <br>
+        <br>
+        <div class="slidecontainer">
+            <b><label for="textboxRange">Min Score</label></b><br>
+            <input class='slider' type="range" max="10" min="0" id="filterRange" name="textboxRange" value="0" oninput="range(event)"> 
+            <p></p>
+        </div>
+        <b><label for="textboxFilt">Add Filter</label></b><br>
+        <input type="text" id="filterBox" name="textboxFilt"> <br>
+        <input type="button" value="Add Filter" onclick="addFilter()">
+
+        <div id='filters' style="margin-top:2%;">
+
+        </div>
+    </aside>
+</div>

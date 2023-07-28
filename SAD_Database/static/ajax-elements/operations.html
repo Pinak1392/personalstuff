@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="Operationspage" style="width:device-width, initial-scale=0.1"> <!-- This is an Operations page. -->
+    <!-- It is a standard player page. -->
+        <h1 class="center-align" style="margin-top: -1%;">Operations Screen</h1>
+        <h4 class="center-align">Ship Maintenance & General Controls</h4>
+        <div>
+            <div class="row">
+                <!-- Separates the content into rows with columns inside of it. -->
+                <div class="col s12 m4 l1"></div> <!-- This puts a column before the content to have some white space. -->
+                <div id="Operationsinfo" class="col s12 m4 l5">
+                    <!-- In a column, puts text that is able to be saved and edited. It is for Operations Notes. -->
+                    <h3><span class="flow-title">Operations Notes<span></h3>
+                    <p>
+                        <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" class="operationsNotes note"></textarea>
+                    </p>
+                </div>
+                <div class="col s12 m4 l5">
+                    <span class="flow-text">
+                        <!-- In this column, a player is able to send and receive commands through a private GM-Player correspondence. -->
+                        <h3><span class="flow-title">Send  & Receive Commands</span></h3>
+                        <textarea type="text" class="chatSendoperations" style="font-size:50%;"></textarea>
+                        <button onclick="chat('operations')" style="display: inline;" class="waves-effect waves-light grey darken-2 btn">SUBMIT</button>
+                        <br />
+                        <ul class="chatListoperations" style="list-style-type:none;">
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="col s12 m4 l1"></div> <!-- This puts a column after the content to have some white space. -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.note').each(function(){
+            socket.emit('reqNotes', $(this).attr('class').split(" ")[0]);
+        });
+    </script>
+</body>
+</html>

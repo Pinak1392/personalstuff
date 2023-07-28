@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Spacemath Login</title>
+  </head>
+  <body>
+
+    <div class="jumbotron text-center title" id="pagetop" style="margin-bottom:0">
+      <h1>Space Maths</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item logoContainer">
+            <a class="nav-link" href="Homepage.html">
+              <img src="Images/LogoSpaceMath.png" alt="Logo" class="logo">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Classes.html">Classes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Tests.html">Tests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class='login'>
+      <h2> Login </h2>
+      <form name="LoginForm" action="" method="GET" class="loginForm">
+        <h5> Username </h5>
+        <input type="text" name="loguser" value="">
+        <h5> Password </h5>
+        <input type="text" name="logpass" value="">
+
+        <p>
+          <input type="button" name="button" value="Login" onClick="login(this.form)">
+           or
+          <input type="button" name="button" value="Sign Up" onClick="signUp()">
+        </p>
+      </form>
+    </div>
+
+    <div class='signup'>
+      <h2> Sign Up </h2>
+      <form name="LoginForm" action="" method="GET" class="loginForm">
+        <h5> Email </h5>
+        <input type="text" name="logemail" value="">
+        <h5> Username </h5>
+        <input type="text" name="logpass" value="">
+        <h5> Password </h5>
+        <input type="text" name="logpass" value="">
+        <div>
+          <h5>
+            Sex
+          </h5>
+          <p>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+          </p>
+        </div>
+
+        <p>
+          <input type="button" name="button" value="Back" onClick="back()">
+           or
+          <input type="button" name="button" value="Enter" onClick="enter(this.form)">
+        </p>
+      </form>
+    </div>
+
+    <footer class="jumbotron text-center" style="margin-bottom:0">
+      <p>Copyright Space Maths 2013</p>
+    </footer>
+
+    <script type="text/javascript" src="JavaScript/scroll.js"></script>
+    <script type="text/javascript" src="JavaScript/Login.js"></script>
+  </body>
+</html>

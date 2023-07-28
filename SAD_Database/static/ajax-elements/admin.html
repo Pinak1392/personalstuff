@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="Adminpage" style="width:device-width, initial-scale=0.1"> <!-- This is an Admin page. -->
+    <!-- It is designed to give the Administrator general control over the site. -->
+        <h1 class="center-align" style="margin-top: -1%;">Administration Terminal</h1>
+        <h4 class="center-align">Watch Over Players</h4>
+        <div>
+            <div class="row">
+                <!-- Separates the content into rows with columns inside of it. -->
+                <div class="col s12 m4 l1"></div> <!-- This puts a column before the content to have some white space. -->
+                <div id="Aboutpage" class="col s12 m4 l5">
+                    <!-- In a column, puts text that is able to be stored and saved. This is an area for task notes. -->
+                    <h3><span class="flow-title">Current Tasks</span></h3>
+                    <p>
+                        <span class="flow-text">
+                            <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden; font-size: 50%;" class="gmTaskNotes note"></textarea>
+                        </span>
+                    </p>
+                </div>
+                <div class="col s12 m4 l5" style="text-align:right">
+                    <!-- In a column, puts text that is able to be stored and saved. This is an area for notes about antagonists. -->
+                    <h3><span class="flow-title">Enemy Control</span></h3>
+                    <p>
+                        <span class="flow-text">
+                            <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden; font-size: 50%;" class="gmEnemyNotes note"></textarea>
+                        </span>
+                    </p>
+                </div>
+                <div class="col s12 m4 l1"></div> <!-- This puts a column after the content to have some white space. -->
+            </div>
+            <div class="divider"></div> <!-- Creates a small line before the map to cut off the two parts of the page. -->
+            <br />
+            <div class="center-align">
+                <h3><span class="flow-title">Screen Control & Command Output</span></h3>
+                <button class="waves-effect waves-light green accent-3 btn" onclick="alertSet('green')">Green alert</button>
+                <button class="waves-effect waves-light yellow accent-2 btn" onclick="alertSet('yellow')">Yellow alert</button>
+                <button class="waves-effect waves-light red  btn" onclick="alertSet('red')">Red alert</button>
+                <!-- Sets all the alert buttons! This'll change the "alert" box on the left. -->
+                <p>
+                    <span class="flow-text">
+                        Check screens, send commands.
+                    </span>
+                </p>
+                <div class="row" style="color: white;">
+                    <div class="col s1"></div>
+                    <div class="col s2">
+                        <p>
+                            <!-- Each of these pulls open a modal that lets you send a command to a specific player. There's also on each of these, a button.-->
+                            <!-- That button allows you to directly open their screens.-->
+                            <span class="flow-text">
+                                <h5>Command</h5>
+                                <textarea type="text" class="chatSendcommand" style="color: white; font-size: 50%;"></textarea>
+                                <button class="waves-effect waves-light grey darken-2 btn" onclick="chat('command')" style="display: inline;">Send Message</button>
+                                <br />
+                                <br />
+                                <button class="waves-effect waves-light red darken-3 btn" onclick="openModal('screencommand')">Open Command</button>
+                                <div style="display:none" class="screencommand"></div>
+                                <ul class="chatListcommand" style="list-style-type:none;">
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                </ul>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col s2">
+                        <p>
+                            <span class="flow-text">
+                                <h5>Helm</h5>
+                                <textarea type="text" class="chatSendhelm" style="color: white; font-size: 50%;"></textarea>
+                                <button class="waves-effect waves-light grey darken-2 btn" onclick="chat('helm')" style="display: inline;">Send Message</button>
+                                <br />
+                                <br />
+                                <button class="waves-effect waves-light red darken-3 btn" onclick="openModal('screenhelm')">Open Helm</button>
+                                <div style="display:none" class="screenhelm"></div>
+                                <ul class="chatListhelm" style="list-style-type:none;">
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                </ul>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col s2">
+                        <p>
+                            <span class="flow-text">
+                                <h5>Operations</h5>
+                                <textarea class="chatSendoperations" type="text" style="color: white; font-size: 50%;"></textarea>
+                                <button class="waves-effect waves-light grey darken-2 btn" onclick="chat('operations')" style="display: inline;">Send Message</button>
+                                <br />
+                                <br />
+                                <button class="waves-effect waves-light red darken-3 btn" onclick="openModal('screenoperations')">Open Operations</button>
+                                <div style="display:none" class="screenoperations"></div>
+                                <ul class="chatListoperations" style="list-style-type:none;">
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                </ul>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col s2">
+                        <p>
+                            <span class="flow-text">
+                                <h5>Science</h5>
+                                <textarea class="chatSendscience" type="text" style="color: white; font-size: 50%;"></textarea>
+                                <button class="waves-effect waves-light grey darken-2 btn" onclick="chat('science')" style="display: inline;">Send Message</button>
+                                <br />
+                                <br />
+                                <button class="waves-effect waves-light red darken-3  btn" onclick="openModal('screenscience')">Open Science</button>
+                                <div style="display:none" class="screenscience"></div>
+                                <ul class="chatListscience" style="list-style-type:none;">
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                </ul>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col s2">
+                        <p>
+                            <span class="flow-text">
+                                <h5>Tactics</h5>
+                                <textarea class="chatSendtactics" type="text" style="color: white; font-size: 50%;"></textarea>
+                                <button class="waves-effect waves-light grey darken-2 btn" onclick="chat('tactics')" style="display: inline;">Send Message</button>
+                                <br />
+                                <br />
+                                <button class="waves-effect waves-light btn red darken-3" onclick="openModal('screentactics')">Open Tactics</button>
+                                <div style="display:none" class="screentactics"></div>
+                                <ul class="chatListtactics" style="list-style-type:none;">
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                    <li><br></li>
+                                </ul>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col s1"></div>
+                </div>
+            </div>
+            <br />
+            <div class="divider"></div> <!-- Creates a small line after the map to cut off the two parts of the page. -->
+            <div class="row">
+                <!-- Separates the content into rows with columns inside of it. -->
+                <div class="col s12 m4 l1"></div> <!-- This puts a column before the content to have some white space. -->
+                <div class="col s12 m4 l5">
+                    <h3><span class="flow-title">Overall Notes</span></h3>
+                    <!-- In a column, puts text that is able to be stored and saved. This is an area for GM notes. -->
+                    <p>
+                        <span class="flow-text">
+                            <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden; font-size: 50%;" class="gmNotes note"></textarea>
+                        </span>
+                    </p>
+                </div>
+                <div class="col s12 m4 l5" style="text-align:right">
+                    <!-- In a column, puts text that is able to be stored and saved. This is an area for map notes. -->
+                    <h3><span class="flow-title">Map</span></h3>
+                    <p>
+                        <span class="flow-text">
+                            <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden; font-size: 50%;" class="gmMapNotes note"></textarea>
+                        </span>
+                    </p>
+                </div>
+                <div class="col s12 m4 l1"></div> <!-- This puts a column before the content to have some white space. -->
+            </div>
+        </div>
+    </div>
+    <script>
+        //This updates notes aswell its at the bottom of everything
+        $('.note').each(function(){
+            socket.emit('reqNotes', $(this).attr('class').split(" ")[0]);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% from "macros.html" import nav_link with context %}
+
+{% block title %}{{title}}{% endblock %}
+<br>
+
+{% block page %}{{title}}{% endblock %}
+
+{% block heading %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <h3> This is the start of my child template</h3>
+  <br>
+  <p>My string: {{my_string}}</p>
+  <p>Value from the list: {{my_list[3]}}</p>
+  <p>Loop through the list:</p>
+  <ul>
+    {% for n in my_list %}
+    <li>{{n}}</li>
+    {% endfor %}
+  </ul>
+  <h3> This is the end of my child template</h3>
+  <!-- Puts the part of the main template which is in its template block in.
+    In this, the original templates footer is put within the block untouched.-->
+  {% block footer %}
+   {{super()}}
+  {% endblock %}
+{% endblock %}

@@ -1,0 +1,61 @@
+ul{
+    list-style-type: none;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+    font-size: 100%;
+    line-height: 1.4em;
+    margin: 0% 38%;
+}
+  
+#todo {
+    padding: 0 1%;
+    border: 0.2px solid rgb(162, 207, 201);
+    margin-top: 1%;
+    background: rgb(241, 255, 253);
+}
+
+#new-task-input {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
+.task {
+    list-style: none;
+    font-size: 22px;
+    line-height: 1.8em;
+}
+
+.task.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+#new-task-input {
+    width: 360px;
+    font-size: 16px;
+    line-height: 1.4em;
+    
+    border: none;
+    border-bottom: 1px solid #888888;
+    margin: 0px 12px;
+}
+  
+#new-task-input:focus {
+    outline: none;
+    border-bottom-color: #0D99FC;
+}
+  
+button {
+    font-size: 16px;
+    line-height: 1.4em;
+  
+    border: none;
+    border-radius: 3px;
+  
+    color: white;
+    background: #0D99FC;
+}
+  

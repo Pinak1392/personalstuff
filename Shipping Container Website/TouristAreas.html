@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Cape York Container Tourism</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center title" id="pagetop" style="margin-bottom:0">
+  <h1>Cape York Container Tourism</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item logoContainer">
+        <a class="nav-link" href="Homepage.html">
+          <img src="" alt="Homepage" class="logo">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="TouristAreas.html">Tourist Areas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Login.html">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="Slideshow">
+  <h2>Featured Locations</h2>
+  <div id="slider">
+    <ul class="slides">
+      <li class="slide arrithmetic 1">
+        <a href='LocationInfo.html'>
+          <img src="" alt="Location 0 pic" class="imgSlide">
+          <h3> Location 0</h3>
+        </a>
+      </li>
+      <li class="slide algebra 2">
+        <a href='LocationInfo.html'>
+          <img src="" alt="Location 1 pic" class="imgSlide">
+          <h3> Location 1</h3>
+        </a>
+      </li>
+      <li class="slide trigonometry 3">
+        <a href='LocationInfo.html'>
+          <img src="" alt="Location 2 pic" class="imgSlide">
+          <h3> Location 2</h3>
+        </a>
+      </li>
+      <li class="slide arrithmetic 4">
+        <a href='LocationInfo.html'>
+          <img src="" alt="Location 4 pic" class="imgSlide">
+          <h3> Location 4</h3>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="testInfo">
+  <h3> Area info </h3>
+  <p> We have camps in many areas of cape york. Just hover over the area you want and select it. <br>
+    You will be presented with a variety of shelter locations you may be interested in.</p>
+</div>
+
+<ul class="tests">
+  <li class="arithmeticTests test" onclick="slidedown(this, 'arithmeticSlide')">
+    <h5> Area 1 </h5>
+    <div class="slideDown arithmeticSlide">
+      <ol>
+        <li>
+          <a href='LocationInfo.html'><p> Location 0 </p></a>
+          <a href='LocationInfo.html'><p> Location 4 </p></a>
+        </li>
+      </ol>
+    </div>
+  </li>
+  <li class="algebraTests test" onclick="slidedown(this, 'algebraSlide')">
+    <h5> Area 2 </h5>
+    <div class="slideDown algebraSlide">
+      <ol>
+        <li>
+          <a href='LocationInfo.html'><p> Location 1</p></a>
+        </li>
+      </ol>
+    </div>
+  </li>
+  <li class="trigTests test" onclick="slidedown(this, 'trigSlide')">
+    <h5> Area 3 </h5>
+    <div class="slideDown trigSlide">
+      <ol>
+        <li>
+          <a href='LocationInfo.html'><p> Location 2</p></a>
+        </li>
+      </ol>
+    </div>
+  </li>
+</ul>
+
+<footer class="jumbotron text-center" style="margin-bottom:0">
+  <p>Copyright Cape York 2020</p>
+</footer>
+
+<script type="text/javascript" src="JavaScript/scroll.js"></script>
+<script type="text/javascript" src="JavaScript/Feature+List.js"></script>
+
+</body>
+</html>

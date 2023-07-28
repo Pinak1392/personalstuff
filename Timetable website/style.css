@@ -1,0 +1,20 @@
+th{
+    width: 10%;
+    font-size: 100%;
+    border: 1px solid black;
+}
+
+#AddTask{
+    color: white;
+    margin-left: 35%;
+    width: 30%;
+    background: rgb(72, 156, 156);
+    padding: 1%;
+    border-radius: 4%;
+    border: 1px solid lightblue;
+}
+
+.slot{
+    border-top: 1px dotted lightgrey;
+    border-bottom: 1px dotted lightgrey;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Space Maths Tests</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center title" id="pagetop" style="margin-bottom:0">
+  <h1>Space Maths</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item logoContainer">
+        <a class="nav-link" href="Homepage.html">
+          <img src="Images/LogoSpaceMath.png" alt="Logo" class="logo">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Classes.html">Classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Tests.html">Tests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Login.html">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="Slideshow">
+  <h2>Featured Tests</h2>
+  <div id="slider">
+    <ul class="slides">
+      <li class="slide arrithmetic 1">
+        <a href='Arithmetic.html'>
+          <img src="Images/Arrithmetic.jpg"  width="20%">
+          <h3> Arithmetic Beginner</h3>
+        </a>
+      </li>
+      <li class="slide algebra 2">
+        <a href='Algebra.html'>
+          <img src="Images/Algebra.png">
+          <h3> Algebra Beginner</h3>
+        </a>
+      </li>
+      <li class="slide trigonometry 3">
+        <a href='Trig.html'>
+          <img src="Images/Trig.png">
+          <h3> Trigonometry Beginner</h3>
+        </a>
+      </li>
+      <li class="slide arrithmetic 4">
+        <a href='Arithmetic.html'>
+          <img src="Images/Arrithmetic.jpg" width="20%">
+          <h3> Arithmetic Beginner</h3>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="testInfo">
+  <h3> Tests info </h3>
+  <p> We offer a wide variety tests, ranging from basic arithmetic to advanced trigonometry. Just hover over the course you want and select it. <br>
+    Each course has 5 questions and the website will tell you how many you got correct at the end.</p>
+</div>
+
+<ul class="tests">
+  <li class="arithmeticTests test" onclick="slidedown(this, 'arithmeticSlide')">
+    <h5> Arithmetic </h5>
+    <div class="slideDown arithmeticSlide">
+      <ol>
+        <li>
+          <a href='Arithmetic.html'><p> Basic Arithmetic </p></a>
+        </li>
+      </ol>
+    </div>
+  </li>
+  <li class="algebraTests test" onclick="slidedown(this, 'algebraSlide')">
+    <h5> Algebra </h5>
+    <div class="slideDown algebraSlide">
+      <ol>
+        <li>
+          <a href='Algebra.html'><p> Basic Algebra </p></a>
+        </li>
+      </ol>
+    </div>
+  </li>
+  <li class="trigTests test" onclick="slidedown(this, 'trigSlide')">
+    <h5> Trigonometry </h5>
+    <div class="slideDown trigSlide">
+      <ol>
+        <li>
+          <a href='Trig.html'><p> Basic Trigonometry </p></a>
+        </li>
+      </ol>
+    </div>
+  </li>
+</ul>
+
+<footer class="jumbotron text-center" style="margin-bottom:0">
+  <p>Copyright Space Maths 2013</p>
+</footer>
+
+<script type="text/javascript" src="JavaScript/scroll.js"></script>
+<script type="text/javascript" src="JavaScript/Feature+List.js"></script>
+
+</body>
+</html>

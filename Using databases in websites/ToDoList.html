@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>My Todolist</title>
+    <link rel="stylesheet" href="ToDo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+          <h1>Welcome to the check list</h1>
+          <p class="lead">A place for you to record your stuff</p>
+        </div>
+    </header>
+
+    <form>
+        <label>
+            Task Name:
+            <input id="newTask" type="text" placeholder="Pick up milk">
+        </label>
+        <button type="button" id="add-task-button">
+            Add Task
+        </button>
+    </form>
+    
+    <ul id="todo">
+
+    </ul>
+
+    <script type="text/template" id="list-item-template">
+        <li class="task">
+          <label>
+            <input type="checkbox">
+            <!-- TASK_NAME -->
+          </label>
+        </li>
+    </script>
+        
+    <script type='text/javascript' src="todo.js"></script>
+  </body>
+</html>

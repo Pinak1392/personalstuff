@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Canberra tourist website </title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Canberra Tourist Website</h1>
+      <nav>
+        <ul>
+          <a href="Homepage.html"> <li>Home</li> </a>
+          <a href="About.html"> <li>About</li> </a>
+          <a href="Contact.html"> <li>Contact</li> </a>
+          <li class="Locations">
+            Locations
+            <ul>
+              <a href="Popular.html"> <li> Popular </li> </a>
+              <a href=""> <li> Recent </li> </a>
+              <a href=""> <li> Trending </li> </a>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="Floriade_heading">
+      <h1> Floriade </h1>
+      <img alt="Rating" src="Assets/5_stars.png" width="20%">
+    </div>
+    <div class="FloriadeImg">
+      <img src="Assets/arrow_left.png" alt="arrow left" class="arrow_left FloriadeAL" align = 'left'>
+      <div class="Floriade_CentreImg">
+        <img src="Assets/FloriadeNight.jpg" align='center' alt='Location Image' class='Location_image'>
+        <img src="Assets/Floriade.jpg" align='center' alt='Location Image' class='Location_image'>
+        <img src="Assets/FlowerFloriade.jpg" align='center' alt='Location Image' class='Location_image'>
+      </div>
+      <img src="Assets/arrow_right.png" alt="arrow right" class="arrow_right FloriadeAR" align = 'right'>
+    </div>
+
+    <div class="Floriade_bottom_text">
+      <div class="Floriade_description">
+        <h2> Description </h2>
+        <p>
+          Floriade is a very beautiful place which is full of life. It is a great place to go for a good time. <br>
+          It is a flower exhibit that has many flowers. And the staff takes great efforts to organise them . <br>
+          It is also a place where many events take place and it also has a small fairground place and stalls.
+        </p>
+      </div>
+
+      <div class="Floriade_comments">
+        <h2> Comments </h2>
+        <p>
+          <b>Daniel:</b> Was a great experience and very refreshing. <br>
+          <b>Greg:</b> 10/10 would visit again.
+        </p>
+      </div>
+    </div>
+
+    <div class="Floriade_user_comment">
+      <h3> Please submit any reviews here </h3>
+      <form action="/action_page.php" id="usrform">
+        Name:
+        <input type="text" name="usrname">
+        <input type="submit">
+      </form>
+
+      <textarea rows="10" cols="30" name="comment" form="usrform">Enter review here...</textarea>
+    </div>
+
+    <footer class="Floriade_info_footer">
+      <p> copyright </p>
+    <footer>
+</html>

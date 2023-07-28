@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Chat</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    </head>
+    <body>
+        <h2>Select your user</h2>
+        <input type="text" id="username">
+        <button id="setUser"> SET </button>
+
+        <script type="text/javascript">
+            var socket = io.connect('http://127.0.0.1:5000');
+
+            $('#setUser').on('click', function(){
+                if($('#username').val() !== ''){
+                    socket.disconnect();
+                    window.location.href = 'http://127.0.0.1:5000/chat?q=' + $('#username').val();
+                }
+            });
+        </script>
+    </body>
+</html>

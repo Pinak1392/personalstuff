@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="Sciencepage" style="width:device-width, initial-scale=0.1"> <!-- This is a Science page. -->
+    <!-- It is a standard player page. -->
+        <h1 class="center-align" style="margin-top: -1%;">Science Screen</h1>
+        <h4 class="center-align">Research & Shields</h4>
+        <div>
+            <div class="row">
+                <!-- Separates the content into rows with columns inside of it. -->
+                <div class="col s12 m4 l1"></div> <!-- This puts a column before the content to have some white space. -->
+                <div id="Scienceinfo" class="col s12 m4 l5">
+                    <!-- In a column, puts text that is able to be saved and edited. This contains Science notes. -->
+                    <h3><span class="flow-title">Science Notes</span></h3>
+                    <p>
+                        <span class="flow-text">
+                            <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" class="scienceNotes note"></textarea>
+                        </span>
+                    </p>
+                </div>
+                <div class="col s12 m4 l5">
+                    <span class="flow-text">
+                        <!-- In this column, a player is able to send and receive commands through a private GM-Player correspondence. -->
+                        <h3><span class="flow-title">Send & Receive Commands</span></h3>
+                        <textarea type="text" class="chatSendscience" style="font-size:50%;"></textarea>
+                        <button onclick="chat('science')" style="display: inline;" class="waves-effect waves-light grey darken-2 btn">SUBMIT</button>
+                        <br />
+                        <ul class="chatListscience" style="list-style-type:none;">
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="col s12 m4 l1"></div> <!-- This puts a column after the content to have some white space. -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.note').each(function(){
+            socket.emit('reqNotes', $(this).attr('class').split(" ")[0]);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <nav>
+        <a href="/index">home</a>
+    </nav>
+    <body>
+        {% block content %}{% endblock %}
+        <script>
+            if(!window.localStorage.getItem('scene')){
+                window.localStorage.setItem('scene', '1')
+            }
+
+            function cont(){
+                scene = window.localStorage.getItem('scene')
+                window.location.href = "/story?q=" + scene
+            }
+
+            function newStory(){
+                window.localStorage.setItem('scene', '1')
+                window.location.href = "/story?q=1"
+            }
+
+            function nextScene(event){
+                scene = $(event.target).attr('id')
+                if(scene === ''){
+                    window.location.href = "/newScene?q=" + $(event.target).attr('class')
+                } else {
+                    window.localStorage.setItem('scene', scene)
+                    window.location.href = "/story?q=" + scene
+                }
+            }
+        </script>
+    </body>
+</html>

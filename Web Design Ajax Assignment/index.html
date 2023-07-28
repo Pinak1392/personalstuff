@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/css.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Games Watch</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" style="color:white">
+                <a class="navbar-brand" href="Homepage">Home</a>
+                <a class="navbar-brand" href="About">About</a>
+                <a class="navbar-brand" href="Games">Games</a>
+            </div>
+        </nav>
+
+        <div id="container">
+            
+        </div>
+
+        <div id="hidden" style="display:none;">
+
+        </div>
+
+        <script type="text/template" id="template">
+            <div style='margin:2%' class='classEdit'>
+                <div class='stylinDiv'>
+                    <h4 style='display: inline-flex'><!--Game--></h4>`
+                    <div style='margin-top:3%; float:right; width: 10%; margin-right:30%'>
+                        <button type="button" class="info" onclick='info(event)' style='background:blue; color:white; padding: 0% 2% 1% 2%; border-radius:30%; width:50%'>
+                            <span style='font-size:100%'>i</span>
+                        </button>
+                        <button type="button" class="close" onclick='erase(event)' style=' background:red; color:white; border-radius:50%; padding: 0% 1% 6% 1.5%; width:40%'>
+                            <span style='font-size:100%; margin-bottom:1%'>x</span>
+                        </button>
+                    </div>
+
+                    <div> 
+                        <p style='display:inline-flex'><em><!--Developer--></em></p>
+                        <p style='display:inline-flex'>Score: <!--Score--></p>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/template" id="box">
+            <div id='filterTags' style='display:inline-flex; background:rgb(100,100,200); border-radius:10%; color:white; padding: 0% 3%' onclick='remFilt(event)'>
+                <p><!--repl--></p>
+            </div>
+        </script>
+
+        <script src="js/library.js"></script>
+    </body>
+</html>

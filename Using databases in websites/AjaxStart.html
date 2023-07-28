@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="demo">
+            <h2>Let AJAX change this text</h2>
+            <button type="button">Change Content</button>
+        </div>
+
+        <script>
+            try{
+                $('button').click(function(){
+                    $.ajax({
+                        type: "POST",
+                        url: "Ajaxinfo.txt",
+                        dataType: "html",
+                        data:{
+                            "selectedScope": "5",
+                            "selectedView": "6",
+                        },
+                        success: function(responseData) {
+                            $("#demo").html(responseData);
+                        }
+                    });
+                });         
+            }
+            catch(err){
+                console.log(err);
+            }
+        </script>
+    </body>
+</html> 

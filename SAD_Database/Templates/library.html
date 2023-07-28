@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="Library"> <!-- This is the page identifier. -->
+        <!-- Instead of linking to external JS, this now uses the database on the server. -->
+        <div class="container">
+            <h1 class="center-align" style="margin-top: -1%;">
+                <!-- Title. -->
+                Ship Database
+            </h1>
+            <br />
+            <br />
+            <table id="example" class="display collection-item grey darken-4" style="width:100%; color:black;"> <!-- This is the DataTable.-->
+                <thead class="collection-item grey darken-4">
+                    <tr>
+                        <th style="text-align:center; color:white;">Library</th> <!-- This is the label for said DataTable. -->
+                    </tr>
+                </thead>
+                <tbody class="collection-item grey darken-4"> <!-- This contains all the datatable elements. -->
+                    {% for i in db %}
+                    <tr id="{{ i.name }}container" class="containsLibData" active="false"> <!-- This is a clickable container object. -->
+                    <!-- Its name, which is connected to the database element "i" searched through db, is its container name. -->    
+                        <td class="collection-item grey darken-4" style="color:red; text-align:center">
+                            {{ i.title }} | {{ i.stance }} | {{ i.creature }} <!-- Several key features allow the library to send what the actual thing is. -->
+                            <div id="{{ i.name }}contained" class="collection-item grey darken-4" style="display:none; color: white;"></div>
+                            <!-- Finally, that is the hidden element that contains an AJAXian loaded HTML file, also called the same name. Super neat! -->
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <script> // Here's the script which allows it to work.
+            $('#example').DataTable({ // This instantiates the datatable in the first place, allowing it to exist and run.
+                initComplete: function () {
+                    $("#example_filter").css("color", "white")
+                    // This makes the background value of this white, for when there is nothing in it. Black on black is hard to see.
+                    // Modifying datatables' css elements requires otherwise complex spreadsheets, when some JS will do.
+                }
+            });
+            var table = $('#example').DataTable(); // Sets the table as a variable.
+
+            $('.dataTables_filter input').css("color", "white"); // This makes the input (search) a white text colour, which otherwise requires complex spreadsheets to do.
+
+            $('.containsLibData').click(function (evt) { // When the text is pressed, it dynamically loads the page for it using AJAX below the text.
+                evt.stopImmediatePropagation(); // Stops it from immediately closing.
+                var cid = $(this).attr('id') // Gets the CID of the thing.
+                cid = cid.substring(0, cid.length - 9)
+                var active = $(this).attr('active')
+                //console.log(active) Debug.
+                if(active === "false"){
+                    $.getJSON(window.location.href + 'dropdown?q=' + cid, function( data ) {
+                        $("#"+cid+"contained").hide().html(data).slideDown();
+                        $('#'+cid+'container').attr('active',"true") // Gets the data.
+                    });
+                    $(evt).fadeToggle("400", "swing", function () { // Fadetoggle's the data.
+                    });
+                } else {
+                    $("#"+cid+"contained").slideUp();
+                    $('#'+cid+'container').attr('active',"false") // If it's nonexistent, prevents the loading of the data.
+                }
+            })
+        </script>
+   </body>
+</html>

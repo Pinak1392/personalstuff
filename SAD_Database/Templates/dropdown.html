@@ -1,0 +1,40 @@
+<div id="page" style="width:device-width">
+    <h1 class="center-align">{{ title }}</h1>
+    <h4 class="center-align">Faction</h4>
+    <div class="row">
+        <div class="col s12 m4 l1"></div>
+        <div id="template-text" style="text-align:center">
+            <p>
+                <span class="flow-text">
+                    {{ templatetext[0] }}
+                    {% for b in templatetext[1:] %}
+                    <br />
+                    <br />
+                    {{ b }}
+                    {% endfor %}
+                </span>
+            </p>
+        </div>
+        <div id="person-text" style="text-align:center">
+            <p>
+                <span class="flow-text" style="text-align:center;">
+                    {{ persontext[0] }}
+                    {% for b in persontext[1:] %}
+                    <br />
+                    <br />
+                    {{ b }}
+                    {% endfor %}
+                </span>
+            </p>
+        </div>
+        <div class="col s12 m4 l1"></div>
+    </div>
+    <div class="row">
+        <div class="col s12 m4 l1"></div>
+        <div class="col s12 m4 l10" style="text-align:center;">
+            <img id="{{ name }}dropimg" src="static/images/{{ name }}.jpg" width="100%" style="border:2px solid blue" />
+            <!-- Image reference: https://nerdist.com/wp-content/uploads/2019/08/Borg_aboard_enterprise_2153-1200x676.jpg -->
+        </div>
+        <div class="col s12 m4 l1"></div>
+    </div>
+</div>

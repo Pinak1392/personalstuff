@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Timetabling Site</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid" style="color:white">
+            <a id='add' class="navbar-brand btn btn-info btn-lg">Add Task</a> 
+            <a id='date' class="navbar-brand"></a>
+            <a id='remove' class="navbar-brand btn btn-info btn-lg">Remove Task</a>
+        </div>
+    </nav>
+    
+    <div id="AddTask" style="position:absolute">
+        <form>
+            <div id='inputs'>
+                <div class="form-group">
+                    <label for="taskName">Task Name</label>
+                    <input type="text" class="form-control" id="Task" placeholder="Enter Task Name">
+                </div>
+                <div class="form-group">
+                    <label for="color">Color</label>
+                    <input type="color" class="form-control" id="Color">
+                </div>
+            </div>
+            
+            <div>
+                <button type="button" class="btn btn-secondary" id="Addtime">add a timeframe</button>
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary" id='Submit'>Submit</button>
+        </form>
+    </div>
+
+    <table style="width:100%; height:100%;" id="Table">
+        <tr>
+            <th>   </th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+    </table>
+
+    <script type="text/template" id="table-time-template">
+        <tr>
+            <th><!-- TASK_NAME --></th>
+            <th id="Mon" class='slot' >   </th>
+            <th id="Tue" class='slot' >   </th>
+            <th id="Wed" class='slot' >   </th>
+            <th id="Thu" class='slot' >   </th>
+            <th id="Fri" class='slot' >   </th>
+            <th id="Sat" class='slot' >   </th>
+            <th id="Sun" class='slot' >   </th>
+        </tr>
+    </script>
+
+    <datalist id="Days">
+        <option value="Mon">
+        <option value="Tue">
+        <option value="Wed">
+        <option value="Thu">
+        <option value="Fri">
+        <option value="Sat">
+        <option value="Sun">
+    </datalist>
+
+    <script type="text/template" id="time-input-template">
+        <div class="form-group times">
+            <label for="taskName">Timeframe</label> <br>
+            <input type='text' id='day' list='Days' maxlength='3' style='width:20%' placeholder='day'>
+            <input type="time" id="time1">
+            to
+            <input type="time" id="time2">
+        </div>
+    </script>
+
+    <script type="text/template" id="reset-template">
+        <div class="form-group">
+            <label for="taskName">Task Name</label>
+            <input type="text" class="form-control" id="Task" placeholder="Enter Task Name">
+        </div>
+        <div class="form-group">
+            <label for="color">Color</label>
+            <input type="color" class="form-control" id="Color">
+        </div>
+    </script>
+
+    <script type="text/template" id="div-template">
+        <div class='edit' style='position:absolute; overflow:hidden;'>
+            <h4><!-- TASK_NAME --></h4>
+        </div>
+    </script>
+
+    <script type='text/javascript' src="table.js"></script>
+</body>

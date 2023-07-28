@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="Helmpage" style="width:device-width, initial-scale=0.1"> <!-- This is a Helm page. -->
+    <!-- It is a standard player page. -->
+        <h1 class="center-align" style="margin-top: -1%;">Helm Screen</h1>
+        <h4 class="center-align">Ship Control & Ship Abilities</h4>
+        <div>
+            <div class="row">
+                <!-- Separates the content into rows with columns inside of it. -->
+                <div class="col s12 m4 l1"></div> <!-- This puts a column before the content to have some white space. -->
+                <div id="Helminfo" class="col s12 m4 l5">
+                    <!-- This column contains a text area box that can send and receive commands between player and GM. -->
+                    <h3><span class="flow-title">Send & Receive Commands</span></h3>
+                    <span class="flow-text">
+                        <textarea type="text" class="chatSendhelm" style="font-size:50%;"></textarea>
+                        <button onclick="chat('helm')" style="display: inline;" class="waves-effect waves-light grey darken-2 btn">SUBMIT</button>
+                        <br />
+                        <ul class="chatListhelm" style="list-style-type:none;">
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                            <li><br></li>
+                        </ul>
+                    </span>
+                </div>
+                <div id="Helm" class="col s12 m4 l5">
+                    <!-- In a column, puts text that is able to be saved and edited. This area is for the Map Notes. -->
+                    <div class="row" style="text-align: right; margin-top: 10%">
+                        <h3><span class="flow-title">Map Notes</span></h3>
+                        <p>
+                            <span class="flow-text">
+                                <textarea onkeyup="textAreaAdjust(this)" style="overflow:hidden" class="helmNotes note"></textarea>    
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4 l1"></div> <!-- This puts a column after the content to have some white space. -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.note').each(function(){
+            socket.emit('reqNotes', $(this).attr('class').split(" ")[0]);
+        });
+    </script>
+</body>
+</html>

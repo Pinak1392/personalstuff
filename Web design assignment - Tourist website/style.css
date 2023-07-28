@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
+*{box-sizing: border-box;}
+
+html{
+  background: white;
+  color: rgb(10,10,10);
+  font-family: sans-serif;
+}
+
+header{
+  color: white;
+  background: rgb(30,30,30);
+  width: 100%;
+}
+
+header > h1{
+  font-family: 'Gamja Flower';
+  width: 30%;
+  margin-left: 10%;
+  margin-bottom: 0%;
+  font-size: 170%;
+  display: inline-block;
+}
+
+nav{
+  color: white;
+  display: inline-block;
+  margin-left: 20%;
+}
+
+nav>ul>a, .Locations{
+  display: inline-block;
+  margin-left: 10px;
+  border-left: 0.5px solid white;
+  border-right: 0.5px solid white;
+  padding: 5px 10px;
+  height: 30px;
+  text-decoration: none;
+  color: white;
+  list-style-type: none;
+}
+
+.Locations{
+  color: white;
+  position: absolute;
+}
+
+nav>ul>a:hover{
+  background: rgb(50,50,50);
+}
+
+.Locations:hover{
+  background: rgb(50,50,50);
+}
+.Locations > ul{
+  list-style-type: none;
+  text-align: center;
+  margin-top: 5px;
+  width: 133%;
+  border-left: 0.5px solid white;
+  border-right: 0.5px solid white;
+  margin-left: -11px;
+  padding: 0px;
+  display: none;
+  background: rgb(50,50,50);
+}
+
+.Locations > ul > a{
+  background: rgb(50,50,50);
+  text-decoration: none;
+  color: white;
+}
+
+.Locations:hover > ul{
+  display: block;
+}
+
+.Locations > ul > a:hover > li{
+  background: rgb(70,70,70);
+}
+
+.Images{
+  background: rgb(30,30,30);
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.Featured > h3{
+  margin-left: 2%;
+}
+
+.Featured_text{
+  background: rgb(30,30,30);
+  text-align: center;
+  color: white;
+  margin-top: -3%;
+}
+
+.Featured_text > h3, .Featured_text > img{
+  margin-top: 2%;
+  margin-left: -17%;
+  display: inline-block;
+}
+
+.Featured_text > .Rating{
+  margin-top: 1.5%;
+  position: absolute;
+  margin-left: 1%;
+  width: 5%;
+  height: 5%;
+}
+
+.Featured_text > p{
+  margin-top: -0.8%;
+}
+
+.arrow_left, .arrow_right{
+  width: 2%;
+  height: 2%;
+  margin: 2%;
+  margin-left: 2%;
+  margin-top: 9%;
+}
+
+.arrow_right{
+  margin-top: 9%;
+}
+
+.arrow_left{
+  margin-right: 7%;
+}
+
+.Location_image{
+  margin: 2%;
+  margin-left:7%
+  width: 20%;
+  display: inline;
+}
+
+.Welcome{
+  text-align: center;
+  font-size: 130%;
+  margin: 4%;
+  height: 40%;
+}
+
+.about{
+  font-size: 125%;
+  margin: 2%;
+  line-height: 140%;
+  display: inline-block;
+  margin-bottom: 1%;
+}
+
+.Side_About{
+  position: absolute;
+  z-index: -1;
+  background: rgb(30,30,30);
+  margin-top: 4%;
+  margin-left: 5%;
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.Side_About>img{
+  margin-top: 8%;
+}
+
+.complaint{
+  margin-top: 3%;
+  margin-left: 2%;
+  display: inline-block;
+}
+
+.complaint > textarea, .complaint > form{
+  margin-top: 3%;
+}
+
+.ContactUs{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 3.5%;
+  margin-left: 10%;
+  width: 20%;
+  height: 50%;
+}
+
+.ContactLogo > span {
+  color: white;
+  display: block;
+  width: 150%;;
+  margin-left: 2%;
+  margin-top: 20%;
+  margin-bottom: -2%;
+  color: white;
+  text-align: center;
+  padding: 3% 0%;
+  border-radius: 5%;
+}
+
+.ContactLogo > span > h3 {
+  color: white;
+  display: inline;
+  width: 120%;
+  height: 4%;
+  margin-left: 4%;
+  margin-top: 4%;
+  margin-bottom: 0%;
+  color: white;
+  text-align: center;
+  padding: 0%;
+  border-radius: 5%;
+}
+
+.fa-facebook {
+  background-color: rgb(59, 89, 152);
+}
+
+.fa-twitter {
+  background-color: rgb(0, 172, 237);
+}
+
+.fa-instagram {
+  background-color: rgb(81, 127, 164);
+}
+
+.fa-google-plus {
+  background-color: rgb(211, 72, 54);
+}
+
+.Floriade_heading{
+  margin-top: 1%;
+  text-align: center;
+}
+
+.Floriade_heading > h1{
+  display: inline;
+  margin-left: -13%;
+}
+
+.Floriade_heading > img{
+  display: inline;
+  position: absolute;
+  margin-top: -4.3%;
+  z-index: -1;
+}
+
+.FloriadeImg{
+  margin-top: -1.5%;
+  background: rgb(30,30,30);
+}
+
+.Floriade_CentreImg{
+  margin-left: 15%;
+  margin-top: 3%;
+}
+
+.FloriadeAL{
+  margin-top: 8%;
+}
+
+.FloriadeAR{
+  margin-top: -9%;
+}
+
+.Floriade_description{
+  margin-left: 1%;
+  margin-bottom: 2%;
+}
+
+.Floriade_description > p{
+  font-size: 110%;
+  margin-top: -1%;
+}
+
+.Floriade_comments{
+  margin-left: 1%;
+  margin-bottom: -5%;
+}
+
+.Floriade_comments > p{
+  margin-top: -1%;
+  line-height: 150%
+}
+
+.Floriade_bottom_text{
+  display: inline-block;
+  margin-bottom: 0%;
+}
+
+.Floriade_user_comment{
+  display: inline-block;
+  margin-left: 10%;
+  margin-bottom: 0%;
+  vertical-align: top;
+}
+
+.Popular_locations{
+  background: rgb(30,30,30);
+  color: white;
+  padding-bottom: 0.5%;
+  margin-bottom: 0%;
+}
+
+.tab{
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+
+.tab > a > img{
+  margin-top: 2%;
+  display: inline-block;
+  width: 15%;
+  vertical-align: bottom;
+}
+
+.tab > h3{
+  display: inline-block;
+  margin-left: 1%;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+footer{
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  background: rgb(30,30,30);
+}
+
+footer > p{
+  margin-top: 7%;
+}
+
+.Contact_footer > p{
+  margin-top: 7.2%;
+}
+
+.Floriade_info_footer{
+  margin-top: -5.2%;
+}

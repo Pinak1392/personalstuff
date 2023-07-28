@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>
+        Continuation of choice: {{ choice.text }}
+    </h2>
+
+    <form id='form' method="POST" action="">
+        {{ form.hidden_tag() }}
+        <h5>{{ form.body.label }}</h5>
+        {{ form.body(size=200) }}<br>
+        {{ form.choices }}<br>
+        <br>
+        <h5>choices</h5>
+        <div id='choicesPlace'>
+            <input type="text">
+        </div>
+        <br>
+        <button onclick="addChoice(event)" type="button">add choice</button>
+        <br>
+        <br>
+        <input type="submit" value="Go">
+    </form>
+
+    <script>
+        $('#form').submit(function(){
+            window.l = [];
+            $('#choicesPlace').children().each(
+                function(){
+                    var v = $(this).val()
+                    if(v !== ''){
+                        window.l.push(v);
+                    }
+                }
+            );
+            
+            window.l = window.l.join('-*#*-')
+            $('#choices').val(window.l);
+            return true;
+        });
+
+        function addChoice(event){
+            $('#choicesPlace').append('<br><input type="text">')
+        }
+    </script>
+{% endblock %}

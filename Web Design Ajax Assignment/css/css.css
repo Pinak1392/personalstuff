@@ -1,0 +1,19 @@
+h1, h3{
+    text-align: center;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.homeImg{
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+
+.AboutImg{
+    width: 25%;
+    margin-left: 37.5%;
+}

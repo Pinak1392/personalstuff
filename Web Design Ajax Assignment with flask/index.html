@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Games Watch</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" style="color:white">
+                <a class="navbar-brand" href="Homepage">Home</a>
+                <a class="navbar-brand" href="About">About</a>
+                <a class="navbar-brand" href="Games">Games</a>
+            </div>
+        </nav>
+
+        <div id="container">
+            
+        </div>
+
+        <script type="text/template" id="template">
+            <div style='margin:2%' class='classEdit'>
+                <h4><!--Game--></h4>
+                <div> 
+                    <p style='display:inline-flex'><em><!--Developer--></em></p>
+                    <p style='display:inline-flex'>Score: <!--Score--></p>
+                </div>
+            </div>
+        </script>
+
+        <script src="library.js"></script>
+    </body>
+</html>
