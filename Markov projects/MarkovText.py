@@ -2,7 +2,7 @@ from collections import defaultdict
 import random
 
 dic = defaultdict(list)
-order = 4
+order = 10
 
 for i in range(3,4):
     with open(f'poem{i}.txt','r') as f:
